@@ -21,7 +21,7 @@ Users can:
 
 ## Links
 
-- [Live Site URL](https://matiasgc.github.io/product-list-with-cart-demo/)
+- [Live Site URL](https://matiasgc.github.io/browser-extension-manager-UI/)
 
 ## Built with
 

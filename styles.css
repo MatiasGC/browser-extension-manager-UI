@@ -1,0 +1,324 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./assets/fonts/NotoSans-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+}
+
+:root {
+  --white: #fff;
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--neutral-200);
+  font-family: "Noto Sans", sans-serif;
+}
+
+h1 {
+  color: var(--neutral-900);
+  font-size: 36px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a:focus,
+button:focus {
+  outline: 1px solid var(--red-700);
+}
+
+main {
+  margin-bottom: 24px;
+}
+.darkmode {
+  --white: hsl(224, 26%, 16%);
+  --neutral-900: hsl(0, 0%, 93%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(0, 0%, 93%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(228, 71%, 7%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(224, 26%, 16%);
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.header-container {
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 24px auto;
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-container .btn-theme {
+  display: flex;
+}
+
+.header-container .sun-theme {
+  display: none;
+  background-color: var(--neutral-200);
+  width: 50px;
+  border-radius: 8px;
+}
+
+.darkmode .header-container .sun-theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.darkmode .header-container .moon-theme {
+  display: none;
+}
+
+.header-container .moon-theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--neutral-100);
+  width: 50px;
+  border-radius: 8px;
+}
+
+.header-container .moon-theme:hover {
+  background-color: var(--neutral-300);
+}
+
+.darkmode .header-container .header-title svg > path {
+  fill: white;
+}
+
+.header-title::before {
+  content: "";
+  background-image: url(./assets/images/logo.svg);
+}
+
+.extensions-list {
+  margin-top: 40px;
+}
+
+.extensions-title {
+  text-align: center;
+}
+
+.extensions-title .filter {
+  margin-block: 14px;
+}
+.extensions-title .filter .filter-btn.active {
+  background-color: var(--red-700);
+  color: var(--white);
+}
+
+.extensions-title .filter .filter-btn {
+  border: none;
+  background-color: var(--white);
+  padding: 6px 16px;
+  border-radius: 16px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: "Noto Sans", sans-serif;
+  color: var(--neutral-900);
+  cursor: pointer;
+  font-size: 16px;
+  margin-inline: 3px;
+}
+
+.extensions-title .filter .filter-btn:active {
+  background-color: var(--red-700);
+}
+
+.extensions-title .filter button:hover {
+  background-color: var(--red-700);
+  color: var(--white);
+}
+
+.card {
+  background-color: var(--neutral-0);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 1px solid var(--neutral-300);
+  transition: opacity 0.3s ease, transform 0.8s ease;
+}
+
+.card.removing {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.card.isHidden {
+  display: none;
+}
+
+.card .card-content {
+  display: flex;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.card .card-content img {
+  width: 50px;
+  height: 50px;
+}
+
+.card .card-content .card-text h3 {
+  color: var(--neutral-900);
+  margin-bottom: 4px;
+}
+
+.card .card-content .card-text p {
+  color: var(--neutral-600);
+  font-size: 14px;
+}
+
+.card .card-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .card-buttons button {
+  font-family: "Noto Sans", sans-serif;
+  border: 1px solid var(--neutral-300);
+  padding: 8px 16px;
+  border-radius: 18px;
+  color: var(--neutral-900);
+}
+
+.card .card-buttons button:hover {
+  background-color: var(--red-700);
+  border-color: var(--red-700);
+  color: var(--white);
+}
+
+.card .card-buttons .switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+.card .card-buttons .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.card .card-buttons .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--neutral-300);
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.card .card-buttons .slider::before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--neutral-100);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.card .card-buttons input:checked + .slider {
+  background-color: var(--red-700);
+}
+
+.card .card-buttons input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+.error-fetching {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 32px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 30px;
+  color: var(--neutral-900);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    display: grid;
+  }
+
+  .extensions-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card .card-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .extensions-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .extensions-list {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    margin-top: 20px;
+  }
+
+  .card .card-content {
+    padding: 0 40px 30px 0;
+  }
+}
